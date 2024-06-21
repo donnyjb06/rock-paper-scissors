@@ -8,7 +8,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     let choice;
 
-    // LOOP TO GET CORRECT CHOICE THAT IS A NUMBER AND IS BETWEEN 0 & 2
+    // LOOP TO GET CORRECT CHOICE THAT IS A NUMBER AND IS BETWEEN 1 & 3
     while (true) {
         choice = parseInt(prompt("1. Rock | 2. Paper | 3. Scissors. Type a number between 1 & 3"));
 
@@ -21,6 +21,7 @@ function getHumanChoice() {
 }
 
 function playRound(user_choice, cpu_choice, choices) {
+    // OUTPUTS USER AND CPU CHOICES
     console.log(`User Choice: ${choices[user_choice]} | Computer Choice: ${choices[cpu_choice]}`)
 
     switch (user_choice) {
@@ -28,35 +29,35 @@ function playRound(user_choice, cpu_choice, choices) {
             console.log("Its a tie!");
             break;
 
-        case 0:
+        case 0: // IF USER CHOOSES ROCK
             switch (cpu_choice) {
-                case 1:
+                case 1: // IF CPU CHOOSES PAPER
                     console.log("You lose! Paper beats rock!");
                     return 0;
                 
-                case 2:
+                case 2: // IF CPU CHOOSES SCISSORS
                     console.log("You win! Rock beats scissors!");
                     return 1;
             }
 
-        case 1:
+        case 1: // IF USER CHOOSES PAPER
             switch (cpu_choice) {
-                case 2:
+                case 2: // IF CPU CHOOSES SCISSORS
                     console.log("You lose! Scissors beats paper!");
                     return 0;
 
-                case 0:
+                case 0: // IF CPU CHOOSES ROCK
                     console.log("You win! Paper beats rock!");
                     return 1;
             }
 
-        case 2:
+        case 2:  // IF USER CHOOSES SCISSORS
             switch (cpu_choice) {
-                case 0:
+                case 0: // IF CPU CHOOSES ROCK
                     console.log("You lose! Rock beats scissors!");
                     return 0;
 
-                case 1:
+                case 1: // IF CPU CHOOSES PAPER
                     console.log("You win! Scissors beats paper!");
                     return 1;
             }
