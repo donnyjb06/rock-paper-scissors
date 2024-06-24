@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -11,9 +8,52 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
-        <script src="script.js" async defer></script>
+        
     </head>
     <body>
+        <header>
+            <div id="header">
+                <span id="rock-header">ROCK </span> <span id="paper-header">PAPER </span> <span id="scissors">SCISSORS</span>
+            </div>
+        </header>
+
+        <div class="game-container">
+
+            <div id="end-screen">
+                <h1 id="winner">YOU WON!</h1>
+                <h1 id="loser">YOU LOST!</h1>
+                <button id="restart-btn">RESTART</button>
+            </div>
+                
+
+            <div class="instructions-container">
+                <p>Choose your champion!</p>
+                <p>First to 5 wins the game!</p>
+            </div>
+
+            <div class="player-choices">
+                <div id="user-choice">
+                    <img src="#" id="user-icon">
+                    <p>Player: <span id="user-score">0</span></p>
+                </div>
+
+                <div id="cpu-choice">
+                    <img src="#" id="cpu-icon">
+                    <p>Computer: <span id="cpu-score">0</span></p>
+                </div>
+            </div>
+
+            <div id="choices">
+                <img src="#" id="rock">
+                <img src="#" id="paper">
+                <img src="#" id="scissors">
+            </div>
+
+            <footer>
+                <p>Created by DonnyJB06</p>
+            </footer>
+        </div>        
         
+        <script src="script.js" async defer></script>
     </body>
 </html>
