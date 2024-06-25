@@ -32,6 +32,7 @@ Welcome to the Rock Paper Scissors Game! This game features cool animations and 
 
 
 
+** Installation
 1. **Clone the Repository**:
     
 ![How to clone repository](assets/images/git%20clone.png)
