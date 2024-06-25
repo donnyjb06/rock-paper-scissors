@@ -44,7 +44,6 @@ buttons.forEach(button => {
 
         // INCREMENT WINNER'S SCORE
         incrementScore(determineWinner(playerChoice, cpuChoice));
-        console.log(`User Score: ${userScore}, CPU Score ${cpuScore}`)
 
         // IF GAME IS OVER SHOW RESULT SCREEN AND RESET DOM
         finalWinner = isGameOver();
