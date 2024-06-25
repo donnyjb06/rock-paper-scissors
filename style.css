@@ -26,7 +26,6 @@
     --rock-color: rgb(253, 77, 69);
     --paper-color: rgb(2, 155, 255);
     --scissors-color: rgb(136, 234, 105);
-    --tie-color: rgb(14, 134, 246);
     --win-color: rgb(0, 200, 40);
     --lose-color: rgb(180, 9, 0);
 }
@@ -120,7 +119,7 @@ body {
     animation: color-fade 1.2s forwards ease-in-out;
 }
 
-#result {
+#game-result {
     position: absolute;
     animation: fly-in 1.2s forwards ease-out, 
         float-white 1.2s 1.2s infinite alternate forwards ease-in-out;
@@ -245,7 +244,7 @@ body {
     0% {
         transform: translateY(0);
         -webkit-filter: drop-shadow(0px 5px 0px #434343);
-        filter: drop-shadow(0px 5px 0px #222);
+        filter: drop-shadow(0px 5px 0px #434343);
     }
 
     100% {
@@ -266,8 +265,8 @@ body {
 #choices img {
     width: 155px;
     height: auto;
-    -webkit-filter: drop-shadow(0px 5px 0px #222);
-    filter: drop-shadow(0px 5px 0px #222);
+    -webkit-filter: drop-shadow(0px 5px 0px #434343);
+    filter: drop-shadow(0px 5px 0px #434343);
     transition: -webkit-filter 0.15s, filter 0.15s;
     cursor: pointer;
 }
