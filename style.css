@@ -23,9 +23,12 @@
 
 /* CSS COLOR VARIABLES */
 :root {
-    --rock-color: #fd4d45;
-    --paper-color: #029bff;
-    --scissors-color: #88ea69;
+    --rock-color: rgb(253, 77, 69);
+    --paper-color: rgb(2, 155, 255);
+    --scissors-color: rgb(136, 234, 105);
+    --tie-color: rgb(14, 134, 246);
+    --win-color: rgb(0, 200, 40);
+    --lose-color: rgb(180, 9, 0);
 }
 
 
@@ -58,7 +61,7 @@ body {
     text-align: center;
     top: 50px;
     text-shadow: 0 5px 0 #434343;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 #rock-header {
@@ -82,6 +85,7 @@ body {
 
 }
 
+
 /* HEADER ANIMATIONS */
 @keyframes float {
     0% {
@@ -96,4 +100,195 @@ body {
         text-shadow: 0 8px 0 rgb(67, 67, 67), 
             0 5px 0px rgba(67, 67, 67, 0.5);
         }
+}
+
+
+/* END SCREEN */
+#end-screen {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: 'PixelOperatorSC';
+    font-size: 4rem;
+    text-shadow: 0 5px 0 #ffffff;
+    animation: color-fade 1.2s forwards ease-in-out;
+}
+
+#result {
+    position: absolute;
+    animation: fly-in 1.2s forwards ease-out, 
+        float-white 1.2s 1.2s infinite alternate forwards ease-in-out;
+    margin-bottom: 400px;
+    color: var(--win-color);
+
+}
+
+#restart-btn {
+    position: fixed;
+    margin-top: 300px;
+    background-color: rgb(94, 1, 1);
+    border: none;
+    font-family: 'PixelOperatorSC';
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    box-shadow: 0 5px 0 #ffffff;
+    transition: box-shadow 0.15s, transform 0.15s;
+    cursor: pointer;
+    animation: fly-up 1.2s ease-in-out forwards;
+}
+
+#restart-btn:active{
+    box-shadow: none;
+    transform: translateY(5px);
+    transition: box-shadow 0.15s, transform 0.15s;
+}
+
+
+/* RESULT SCREEN ANIMATIONS */
+@keyframes float-white {
+    0% {
+        transform: translateY(0);
+        text-shadow: 0 5px 0 #ffffff, 
+            0 5px 0px rgba(255, 255, 255, 0.5);
+
+    }
+
+    100% {
+        transform: translateY(-20px);
+        text-shadow: 0 8px 0 rgb(255, 255, 255), 
+            0 5px 0px rgba(255, 255, 255, 0.5);
+        }
+}
+
+@keyframes fly-in {
+    from {
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        
+    }
+}
+
+@keyframes fly-up {
+    from {
+        opacity: 0;
+        transform: translateY(500px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        
+    }
+}
+
+@keyframes color-fade {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+/* GAME CONTAINER GENERAL STYLING */
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'PixelOperatorSc';
+    font-size: 2rem;
+    text-shadow: 0 3px 0 #000;
+}
+
+/* INSTRUCTIONS CONTAINER */
+.instructions-container p:nth-child(1) {
+    font-size: 3rem;
+}
+
+/* PLAYER CHOICES CONTAINER */
+.player-choices {
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+}
+
+.player-choices img {
+    position: relative;
+    z-index: 1;
+    width: 150px;
+    height: auto;
+    animation: choice-animation 1s both alternate infinite;
+    -webkit-filter: drop-shadow(0px 5px 0px #434343);
+    filter: drop-shadow(0px 5px 0px #434343);
+}
+
+/* PLAYER CHOICE ANIMATIONS */
+@keyframes choice-animation {
+    0% {
+        transform: translateY(0);
+        -webkit-filter: drop-shadow(0px 5px 0px #434343);
+        filter: drop-shadow(0px 5px 0px #222);
+    }
+
+    100% {
+        transform: translateY(-20px);
+        -webkit-filter: drop-shadow(0px 5px 0px #434343);
+        filter: drop-shadow(0px 8px 0px #434343);
+        }
+}
+
+
+/* CHOICE BUTTONS (ROCK, PAPER, SCISSORS) */
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 110px;
+}
+
+#choices img {
+    width: 155px;
+    height: auto;
+    -webkit-filter: drop-shadow(0px 5px 0px #222);
+    filter: drop-shadow(0px 5px 0px #222);
+    transition: -webkit-filter 0.15s, filter 0.15s;
+    cursor: pointer;
+}
+
+#choices img:active{
+    transform: translateY(5px);
+    -webkit-filter: none;
+    filter: none;
+}
+
+
+/* FOOTER STYLES */
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    font-family: 'PixelOperatorSC';
+    background-color: var(--scissors-color);
+    width: 100vw;
+    padding: 5px;
+    font-size: 1.5rem;
+    text-shadow: 0 2px 0 #434343;
 }
