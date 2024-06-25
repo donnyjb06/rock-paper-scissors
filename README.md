@@ -7,6 +7,9 @@ Welcome to the Rock Paper Scissors Game! This game features cool animations and 
 ![Game screenshot](assets/images/game-ss.png)
 
 
+[Rock Paper Scissors](https://donnyjb06.github.io/rock-paper-scissors/)
+
+
 
 ## Features
 - Cool Animations: Enjoy smooth and engaging animations for each action and result.
